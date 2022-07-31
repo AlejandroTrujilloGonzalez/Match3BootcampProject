@@ -20,6 +20,11 @@ public class TileController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("click");
+        TileManager.instance.MatchTiles(this);
+    }
+
+    private void OnDestroy()
+    {
+        //TODO: do the damage
     }
 }

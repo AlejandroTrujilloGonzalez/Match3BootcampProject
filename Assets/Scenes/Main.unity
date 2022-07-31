@@ -1626,6 +1626,8 @@ GameObject:
   - component: {fileID: 1098566505}
   - component: {fileID: 1098566504}
   - component: {fileID: 1098566503}
+  - component: {fileID: 1098566506}
+  - component: {fileID: 1098566507}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1651,7 +1653,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9b0bd8935f6fb4245b988f6e7e9dc15f, type: 3}
   - {fileID: 21300000, guid: ce87cecc45c156e4ead35e64cc00c07b, type: 3}
   - {fileID: 21300000, guid: 8b035f474b17131489f9b89b1c78daaa, type: 3}
-  tileControllers: []
+  tiles: []
   spawnPoints:
   - {fileID: 1706196722}
   - {fileID: 1089761971}
@@ -1690,6 +1692,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098566506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098566502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5040dfe66e27544a1c95bf48dbd23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesLeftText: {fileID: 1763277653}
+--- !u!114 &1098566507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098566502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aafd33904dc48c4a99da6834ec9ac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1142330525
 GameObject:
   m_ObjectHideFlags: 0
