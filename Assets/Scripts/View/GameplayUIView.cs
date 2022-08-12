@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameplayUIController : MonoBehaviour
+public class GameplayUIView : MonoBehaviour
 {
     public TMP_Text movesLeftText;
 
     private int movesLeft;
 
-    public static GameplayUIController instance;
+    public static GameplayUIView instance;
 
     private void Awake()
     {
@@ -23,16 +23,16 @@ public class GameplayUIController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        InitializeLevel(LevelManager.instance.levels[0]);
+        //InitializeLevel(LevelManager.instance.levels[0]);
     }
 
-    public void InitializeLevel(Level level)
+    public void InitializeLevel(LevelModel level)
     {
         movesLeft = level.maxMoves;
         movesLeftText.text = level.maxMoves.ToString();
     }
 
-    public void decreaseMoves()
+    public void DecreaseMoves()
     {
         movesLeft--;
         if (movesLeft <= 0)

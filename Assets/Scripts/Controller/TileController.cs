@@ -5,22 +5,32 @@ using UnityEngine;
 public class TileController : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
-    public Tile tile;
+    public TileModel tile;
+
+    public List<TileController> validNeighbours = new List<TileController>();
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void InitizalizeTile(Tile tile)
+    public void InitizalizeTile(TileModel tile)
     {
         this.tile = tile;
         spriteRenderer.sprite = TileManager.instance.tileSprites[(int) tile.type];
+        StartCoroutine(CheckNeighborsDelayed());
+
+    }
+
+    private IEnumerator CheckNeighborsDelayed()
+    {
+        yield return new WaitForSeconds(1);
+        validNeighbours = TileManager.instance.GetTileNeighbors(this);
     }
 
     private void OnMouseDown()
     {
-        TileManager.instance.MatchTiles(this);
+        TileManager.instance.OnClickTile(this);
     }
 
     private void OnDestroy()

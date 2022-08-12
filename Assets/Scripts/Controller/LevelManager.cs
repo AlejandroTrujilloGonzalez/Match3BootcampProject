@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
 
-    public List<Level> levels = new List<Level>();
+    public List<LevelModel> levels = new List<LevelModel>();
 
     public static LevelManager instance;
 
@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
 
     private void GenerateLevels()
     {
-        Level level1 = new Level(0, 30);
+        LevelModel level1 = new LevelModel(0, 30);
         levels.Add(level1);
     }
 }

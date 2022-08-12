@@ -1,10 +1,10 @@
 using UnityEngine;
-public class Tile
+public class TileModel
 {
     public Vector2Int tileLocation;
     public TileType type;
 
-    public Tile(Vector2Int tileLocation, TileType type)
+    public TileModel(Vector2Int tileLocation, TileType type)
     {
         this.tileLocation = tileLocation;
         this.type = type;
