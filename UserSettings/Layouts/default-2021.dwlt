@@ -8,7 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 123
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 40
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 89
+  controlID: 41
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -335,7 +335,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 26fbffff
+      m_ExpandedIDs: ea8dffff308effffb8aaffffb6b4ffff58b8ffffdcb8ffff40b9ffff50ccffffd8e5ffff86ecffff74f7ffff8cf7ffffd0f7ffffb2f8ffffb8f9ffff26fbffff4671000050710000c8bb0000dabb000078bf0000a0bf0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -606,9 +606,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6144431, y: 0.8379925, z: 0.03694327}
+    m_Target: {x: 1.843585, y: 3.6768103, z: -0.031569578}
     speed: 2
-    m_Value: {x: -0.6144431, y: 0.8379925, z: 0.03694327}
+    m_Value: {x: 1.843585, y: 3.6768103, z: -0.031569578}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -642,16 +642,16 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
-    m_ShowGrid: 0
+    m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
@@ -659,9 +659,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.9820676
+    m_Target: 8.252403
     speed: 2
-    m_Value: 4.9820676
+    m_Value: 8.252403
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -727,22 +727,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Plugins
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Plugins
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Proyectos\Repo\Unity\Match3BootcampProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42610000
-    m_LastClickedID: 24898
-    m_ExpandedIDs: 000000003c6100003e6100004061000042610000
+    m_SelectedIDs: 50650000
+    m_LastClickedID: 25936
+    m_ExpandedIDs: 0000000030650000366500003a6500003c6500003e650000866600009266000098660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c6100003e6100004061000042610000
+    m_ExpandedIDs: 0000000030650000326500003465000036650000386500003a6500003c6500003e6500004065000042650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -798,21 +798,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300004c890000d4ce030084600000
+    m_ExpandedInstanceIDs: c62300004c890000d4ce030084600000d2750000de640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: GameplayConstants
+      m_OriginalName: GameplayConstants
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 50568
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - D:\Proyectos\Repo\Unity\Match3BootcampProject\Library\PlayModeViewStates\9244c00aeaddf944681fc303706a9621
+  - D:\Proyectos\Repo\Unity\Match3BootcampProject\Library\PlayModeViewStates\b577bb34518784e41bec242a38ac22ac
   m_PlayModeViewName: GameView
   m_ShowGizmos: 1
   m_TargetDisplay: 0

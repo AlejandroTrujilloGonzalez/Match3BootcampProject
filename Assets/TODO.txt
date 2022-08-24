@@ -1,3 +1,0 @@
-- Refactorizar a MVC
-- Meter DOTween para las animaciones de los tiles
-- Afinar match (no va del todo bien)
