@@ -73,11 +73,18 @@ public class BoardView : MonoBehaviour
 
                 if (boardController.isMatch)
                 {
+                    //TODO: MAKE DAMAGE
                     levelController.DecreaseMoves();
                     UpdateTextMoves();
                 }
+                boardController.isMatch = false;
             }
-        }        
+        }
+
+        if (levelController.GetMoves() <= 0)
+        {
+            //TODO: GAME OVER
+        }
 
     }
 

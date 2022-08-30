@@ -6,23 +6,35 @@ using TMPro;
 
 public class SceneLoader : MonoBehaviour
 {
+    public static SceneLoader Instance;
 
-    public GameObject loadingBar;
+    public GameObject loadingCanvas;
     public Slider slider;
     public TMP_Text progressText;
 
-   
-    public void LoadLovel(int sceneId)
+    private void Awake()
     {
-        StartCoroutine(LoadAsyncScene(sceneId));
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void LoadScene(int sceneId)
+    {
+        StartCoroutine(LoadAsyncScene(sceneId));        
     }
 
     IEnumerator LoadAsyncScene(int sceneId)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneId);
 
-        loadingBar.SetActive(true);
+        loadingCanvas.SetActive(true);
 
         while (!op.isDone)
         {
@@ -32,5 +44,7 @@ public class SceneLoader : MonoBehaviour
 
             yield return null;
         }
+
+        loadingCanvas.SetActive(false);
     }
 }
