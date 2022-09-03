@@ -20,6 +20,12 @@ public class BoardView : MonoBehaviour
 
     public TMP_Text idText;
     public TMP_Text movesText;
+    public TMP_Text goalText;
+
+    public EnemyController enemyController;
+    public EnemySO enemyValues;
+
+    private int nTilesDestroyed = 0;
 
     private bool IsAnimating => animations.Count > 0;
 
@@ -35,6 +41,7 @@ public class BoardView : MonoBehaviour
         boardController.OnTileDestroyed += OnTileDestroyed;
 
         levelController = new LevelController(levelValues.id, levelValues.moves);
+        enemyController = new EnemyController(enemyValues.name, enemyValues.life);
         UpdateTextMoves();
     }
 
@@ -73,17 +80,21 @@ public class BoardView : MonoBehaviour
 
                 if (boardController.isMatch)
                 {
-                    //TODO: MAKE DAMAGE
+                    Debug.Log("Tiles destroyed " + nTilesDestroyed);                    
+                    enemyController.TakeDamage(boardController.CalculateDamage(nTilesDestroyed));
+                    Debug.Log("monster life left: " + enemyController.GetLife());
                     levelController.DecreaseMoves();
                     UpdateTextMoves();
                 }
                 boardController.isMatch = false;
+                nTilesDestroyed = 0;
             }
         }
 
         if (levelController.GetMoves() <= 0)
         {
             //TODO: GAME OVER
+            levelController.GameOver();
         }
 
     }
@@ -108,6 +119,7 @@ public class BoardView : MonoBehaviour
 
     private void OnTileDestroyed(TileModel tile)
     {
+        nTilesDestroyed++;
         animations.Add(new DestroyTileAnim(GetTileViewAt(tile.position)));
         if (animations.Count == 1)
         {

@@ -162,6 +162,7 @@ public class BoardController
     private void ProcessColorMatch(TileModel touchedTile)
     {
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int>());
+        
         if (matchedTiles.Count >= (int)GameplayConstants.nMinimunMatch)
         {
             foreach (TileModel tile in matchedTiles)
@@ -197,6 +198,13 @@ public class BoardController
             OnTileDestroyed(tile);
             model[x, y].item = null;
         }
+    }
+
+    public int CalculateDamage(int nTilesDestroyed)
+    {
+        int damage = nTilesDestroyed * 10;
+        Debug.Log("Damage done: " + damage);
+        return damage;
     }
 
     //////////////////////////////// SPECIAL MATCHES ///////////////////////////////////

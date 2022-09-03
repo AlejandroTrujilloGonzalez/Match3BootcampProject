@@ -26,4 +26,9 @@ public class LevelController
         model.Moves--;
     }
 
+    public void GameOver()
+    {
+        SceneLoader.Instance.LoadScene(0);
+    }
+
 }
