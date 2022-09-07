@@ -14,7 +14,7 @@ public class BoardView : MonoBehaviour
     public BoardController boardController;
     private List<IViewAnim> animations = new List<IViewAnim>();
 
-    //level
+    //Level
     public LevelController levelController;
     public LevelSO levelValues;
 
@@ -24,6 +24,10 @@ public class BoardView : MonoBehaviour
 
     public EnemyController enemyController;
     public EnemySO enemyValues;
+    public TMP_Text enemyLifeText;
+
+    public GameObject loseFrame;
+    public GameObject winFrame;
 
     private int nTilesDestroyed = 0;
 
@@ -43,6 +47,7 @@ public class BoardView : MonoBehaviour
         levelController = new LevelController(levelValues.id, levelValues.moves);
         enemyController = new EnemyController(enemyValues.name, enemyValues.life);
         UpdateTextMoves();
+        UpdateEnemyLife();
     }
 
     public void AddTileView(TileView tile)
@@ -79,10 +84,9 @@ public class BoardView : MonoBehaviour
                 boardController.ProcessInput(new Vector2Int((int)hitPosition.x, (int)hitPosition.y));
 
                 if (boardController.isMatch)
-                {
-                    Debug.Log("Tiles destroyed " + nTilesDestroyed);                    
+                {                  
                     enemyController.TakeDamage(boardController.CalculateDamage(nTilesDestroyed));
-                    Debug.Log("monster life left: " + enemyController.GetLife());
+                    UpdateEnemyLife();
                     levelController.DecreaseMoves();
                     UpdateTextMoves();
                 }
@@ -91,11 +95,11 @@ public class BoardView : MonoBehaviour
             }
         }
 
-        if (levelController.GetMoves() <= 0)
-        {
-            //TODO: GAME OVER
-            levelController.GameOver();
-        }
+        if (levelController.GetMoves() <= 0)        
+            ActivateVictoryLoseFrame(LoseFrameCoroutine());                   
+
+        if (enemyController.GetLife() <= 0)        
+            ActivateVictoryLoseFrame(WinFrameCoroutine());        
 
     }
 
@@ -139,6 +143,35 @@ public class BoardView : MonoBehaviour
     private void UpdateTextMoves()
     {
         movesText.text = levelController.GetMoves().ToString();
+    }
+
+    //WIP. do with a life bar
+    private void UpdateEnemyLife()
+    {
+        enemyLifeText.text = enemyController.GetLife() + "/" + enemyValues.life;
+    }
+
+    private void ActivateVictoryLoseFrame(IEnumerator coroutine)
+    {
+        StartCoroutine(coroutine);
+    }
+
+    IEnumerator WinFrameCoroutine()
+    {
+        winFrame.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        levelController.WinLevel();
+    }
+
+    IEnumerator LoseFrameCoroutine()
+    {
+        loseFrame.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        levelController.GameOver();
     }
 
 }

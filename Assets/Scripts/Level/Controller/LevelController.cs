@@ -26,6 +26,13 @@ public class LevelController
         model.Moves--;
     }
 
+    public void WinLevel()
+    {
+        //WIP. increase id lvl
+        Debug.Log("You win");
+        SceneLoader.Instance.LoadScene(0);
+    }
+
     public void GameOver()
     {
         SceneLoader.Instance.LoadScene(0);

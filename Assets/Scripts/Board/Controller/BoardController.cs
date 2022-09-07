@@ -203,7 +203,7 @@ public class BoardController
     public int CalculateDamage(int nTilesDestroyed)
     {
         int damage = nTilesDestroyed * 10;
-        Debug.Log("Damage done: " + damage);
+        
         return damage;
     }
 
