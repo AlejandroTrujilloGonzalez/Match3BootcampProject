@@ -6,9 +6,9 @@ public class LevelController
 {
     private LevelModel model;
 
-    public LevelController(int id, int moves)
+    public LevelController(int id, int moves, int maxTilesTypes)
     {
-        model = new LevelModel(id, moves);
+        model = new LevelModel(id, moves, maxTilesTypes);
     }
 
     public int GetId()

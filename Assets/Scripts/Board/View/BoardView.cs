@@ -38,13 +38,16 @@ public class BoardView : MonoBehaviour
         if (inputCamera == null)
             inputCamera = Camera.main;
 
+        //Board setting
         inputPlane = new Plane(Vector3.forward, Vector3.zero);
         boardController = new BoardController(boardSize.x, boardSize.y);
         boardController.OnTileCreated += OnTileCreated;
         boardController.OnTileMoved += OnTileMoved;
         boardController.OnTileDestroyed += OnTileDestroyed;
+        boardController.maxTilesTypes = levelValues.maxTilesTypes;
 
-        levelController = new LevelController(levelValues.id, levelValues.moves);
+        //Level setting
+        levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes);
         enemyController = new EnemyController(enemyValues.name, enemyValues.life);
         UpdateTextMoves();
         UpdateEnemyLife();

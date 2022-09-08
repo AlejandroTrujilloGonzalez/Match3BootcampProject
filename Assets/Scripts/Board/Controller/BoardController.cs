@@ -13,6 +13,7 @@ public class BoardController
     public event Action<TileModel, TileModel> OnTileMoved = delegate (TileModel from, TileModel to) { };
 
     public bool isMatch = false;
+    public int maxTilesTypes = 0;
 
     public BoardController(int width, int height, TileItem[,] initialValues = null)
     {
@@ -36,7 +37,7 @@ public class BoardController
         if (touchedTile.item == null)
             return;
 
-        if (touchedTile.item.tileElement >= 0 && touchedTile.item.tileElement <= (int)GameplayConstants.maxTypeOfTiles)
+        if (touchedTile.item.tileElement >= 0 && touchedTile.item.tileElement <= maxTilesTypes)
         {
             ProcessColorMatch(touchedTile);
             return;
@@ -78,7 +79,7 @@ public class BoardController
                     {
                         model[x, nextY - 1].item = new TileItem()
                         {
-                            tileElement = UnityEngine.Random.Range(0, (int)GameplayConstants.maxTypeOfTiles + 1)
+                            tileElement = UnityEngine.Random.Range(0, maxTilesTypes + 1)
                         };
                         OnTileCreated(model[x, nextY - 1]);
                         if (y < nextY - 1)

@@ -7,4 +7,6 @@ public class LevelSO : ScriptableObject
 {
     public int id;
     public int moves;
+    public int maxTilesTypes;
+    public EnemySO enemy;
 }
