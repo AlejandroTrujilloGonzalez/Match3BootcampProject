@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   moves: 15
+  maxTilesTypes: 2
+  enemy: {fileID: 11400000, guid: e9588dcb3d5988748bb6e1343d900f7c, type: 2}

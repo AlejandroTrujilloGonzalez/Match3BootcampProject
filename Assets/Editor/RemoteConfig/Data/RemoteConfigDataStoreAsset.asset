@@ -12,16 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"2b0e9cab-7ca0-42f4-a951-156738f6fa56\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
-    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"2b0e9cab-7ca0-42f4-a951-156738f6fa56\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
-    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
+  _rsKeyList: '[]'
+  _rsLastCachedKeyList: '[]'
   _environments: "[\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   
-    \"name\": \"production\",\r\n    \"id\": \"868a9df7-6234-41ed-bcbb-fe4902fac887\",\r\n   
-    \"isDefault\": true,\r\n    \"createdAt\": \"2022-09-07T17:30:13Z\",\r\n    \"updatedAt\":
-    \"2022-09-07T17:30:13Z\"\r\n  },\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   
     \"name\": \"dev\",\r\n    \"id\": \"02ac6e61-4596-475f-8820-d459347f4b42\",\r\n   
     \"isDefault\": false,\r\n    \"createdAt\": \"2022-09-07T17:52:08Z\",\r\n   
-    \"updatedAt\": \"2022-09-07T17:52:08Z\"\r\n  }\r\n]"
+    \"updatedAt\": \"2022-09-07T17:52:08Z\"\r\n  },\r\n  {\r\n    \"projectId\":
+    \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n    \"name\": \"production\",\r\n   
+    \"id\": \"868a9df7-6234-41ed-bcbb-fe4902fac887\",\r\n    \"isDefault\": true,\r\n   
+    \"createdAt\": \"2022-09-07T17:30:13Z\",\r\n    \"updatedAt\": \"2022-09-07T17:30:13Z\"\r\n 
+    }\r\n]"

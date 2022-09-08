@@ -15,7 +15,6 @@ public class SceneLoader : MonoBehaviour
     private void Awake()
     {
 
-         Time.timeScale = 1; 
         if (Instance == null)
         {
             Instance = this;

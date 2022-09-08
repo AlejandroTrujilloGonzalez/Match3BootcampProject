@@ -28,13 +28,17 @@ public class LevelController
 
     public void WinLevel()
     {
-        //WIP. increase id lvl
+        DataController.Instance.data.playerCurrentLevel++;
+        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerVictory;
+        DataManager.Save();
         Debug.Log("You win");
         SceneLoader.Instance.LoadScene(0);
     }
 
     public void GameOver()
     {
+        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerDefeat;
+        DataManager.Save();
         SceneLoader.Instance.LoadScene(0);
     }
 
