@@ -138,11 +138,13 @@ Library: lib_burst_generated
 --output=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
+--root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Analytics.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Telemetry.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.VisualScripting.State.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Assembly-CSharp-firstpass.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Core.dll
+--root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Authentication.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Burst.dll
@@ -154,6 +156,7 @@ Library: lib_burst_generated
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
+--root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.RemoteConfig.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.ScriptableBuildPipeline.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
@@ -168,9 +171,6 @@ Library: lib_burst_generated
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Core.Configuration.dll
---root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Analytics.dll
---root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.Authentication.dll
---root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.Services.RemoteConfig.dll
 --root-assembly=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\Unity.RemoteConfig.Editor.Core.dll
 --assembly-folder=D:\Proyectos\Repo\Unity\Match3BootcampProject\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/

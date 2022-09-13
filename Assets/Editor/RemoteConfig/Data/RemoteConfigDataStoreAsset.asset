@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: '[]'
-  _rsLastCachedKeyList: '[]'
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c1bfa1e4-81d8-4ea8-926a-a013b7772730\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
+    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c1bfa1e4-81d8-4ea8-926a-a013b7772730\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
+    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   
     \"name\": \"dev\",\r\n    \"id\": \"02ac6e61-4596-475f-8820-d459347f4b42\",\r\n   
     \"isDefault\": false,\r\n    \"createdAt\": \"2022-09-07T17:52:08Z\",\r\n   

@@ -16,15 +16,16 @@ public class BoardView : MonoBehaviour
 
     //Level
     public LevelController levelController;
-    public LevelSO levelValues;
+    public LevelListSO levelListSO;
+    private LevelSO levelValues;
 
     public TMP_Text idText;
     public TMP_Text movesText;
     public TMP_Text goalText;
 
     public EnemyController enemyController;
-    public EnemySO enemyValues;
     public TMP_Text enemyLifeText;
+    public GameObject enemy;
 
     public GameObject loseFrame;
     public GameObject winFrame;
@@ -43,14 +44,13 @@ public class BoardView : MonoBehaviour
         boardController = new BoardController(boardSize.x, boardSize.y);
         boardController.OnTileCreated += OnTileCreated;
         boardController.OnTileMoved += OnTileMoved;
-        boardController.OnTileDestroyed += OnTileDestroyed;
-        boardController.maxTilesTypes = levelValues.maxTilesTypes;
+        boardController.OnTileDestroyed += OnTileDestroyed;        
 
         //Level setting
-        levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes);
-        enemyController = new EnemyController(enemyValues.name, enemyValues.life);
+        InitializeLevel();
         UpdateTextMoves();
         UpdateEnemyLife();
+        
     }
 
     public void AddTileView(TileView tile)
@@ -96,14 +96,13 @@ public class BoardView : MonoBehaviour
                 boardController.isMatch = false;
                 nTilesDestroyed = 0;
             }
-        }
 
-        if (levelController.GetMoves() <= 0)        
-            ActivateVictoryLoseFrame(LoseFrameCoroutine());                   
+            if (levelController.GetMoves() <= 0)
+                ActivateVictoryLoseFrame(LoseFrameCoroutine());
 
-        if (enemyController.GetLife() <= 0)        
-            ActivateVictoryLoseFrame(WinFrameCoroutine());        
-
+            if (enemyController.GetLife() <= 0)
+                ActivateVictoryLoseFrame(WinFrameCoroutine());
+        }     
     }
 
     private void OnTileCreated(TileModel tile)
@@ -143,6 +142,15 @@ public class BoardView : MonoBehaviour
         }
     }
 
+    private void InitializeLevel()
+    {        
+        levelValues = levelListSO.levelList[DataController.Instance.data.playerCurrentLevel];
+        boardController.maxTilesTypes = levelValues.maxTilesTypes;
+        levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes, levelValues.enemy);
+        enemyController = new EnemyController(levelValues.enemy.enemyName, levelValues.enemy.life);
+        enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
+    }
+
     private void UpdateTextMoves()
     {
         movesText.text = levelController.GetMoves().ToString();
@@ -151,7 +159,7 @@ public class BoardView : MonoBehaviour
     //WIP. do with a life bar
     private void UpdateEnemyLife()
     {
-        enemyLifeText.text = enemyController.GetLife() + "/" + enemyValues.life;
+        enemyLifeText.text = enemyController.GetLife() + "/" + levelValues.enemy.life;
     }
 
     private void ActivateVictoryLoseFrame(IEnumerator coroutine)

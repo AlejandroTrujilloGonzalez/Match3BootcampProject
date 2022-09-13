@@ -18,10 +18,7 @@ public class DataController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void Start()
-    {
         data = DataManager.Load();
         DataManager.Save();
     }

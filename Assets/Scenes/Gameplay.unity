@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 798440926}
   - component: {fileID: 798440925}
   m_Layer: 0
-  m_Name: Monster
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,12 +2390,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardSize: {x: 6, y: 5}
   inputCamera: {fileID: 519420031}
-  levelValues: {fileID: 11400000, guid: bbc04d6288f0290429dce70b1998bce3, type: 2}
+  levelListSO: {fileID: 11400000, guid: f499ed6fed3ee0f47911f33c0da2e475, type: 2}
   idText: {fileID: 0}
   movesText: {fileID: 1763277653}
   goalText: {fileID: 41646200}
-  enemyValues: {fileID: 11400000, guid: e9588dcb3d5988748bb6e1343d900f7c, type: 2}
   enemyLifeText: {fileID: 1023782627}
+  enemy: {fileID: 798440924}
   loseFrame: {fileID: 1426227723}
   winFrame: {fileID: 597996927}
 --- !u!1 &1155870827

@@ -6,9 +6,9 @@ public class LevelController
 {
     private LevelModel model;
 
-    public LevelController(int id, int moves, int maxTilesTypes)
+    public LevelController(int id, int moves, int maxTilesTypes, EnemySO enemy)
     {
-        model = new LevelModel(id, moves, maxTilesTypes);
+        model = new LevelModel(id, moves, maxTilesTypes, enemy);
     }
 
     public int GetId()
@@ -38,6 +38,7 @@ public class LevelController
     public void GameOver()
     {
         DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerDefeat;
+        DataController.Instance.data.playerEnergy--;
         DataManager.Save();
         SceneLoader.Instance.LoadScene(0);
     }
