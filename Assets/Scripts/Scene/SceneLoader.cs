@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading.Tasks;
+using Game.Services;
+
 
 public class SceneLoader : MonoBehaviour
 {
@@ -11,6 +14,11 @@ public class SceneLoader : MonoBehaviour
     public GameObject loadingCanvas;
     public Slider slider;
     public TMP_Text progressText;
+
+    [SerializeField]
+    private bool IsDevBuild = true;
+
+    private TaskCompletionSource<bool> _cancellationTaskSource;
 
     private void Awake()
     {
@@ -26,6 +34,7 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    //////////////////////////////////////////////Scene Management
     public void LoadScene(int sceneId)
     {
         StartCoroutine(LoadAsyncScene(sceneId));        
@@ -48,4 +57,60 @@ public class SceneLoader : MonoBehaviour
 
         loadingCanvas.SetActive(false);
     }
+
+    ////////////////////////////////////////Services management
+    void Start()
+    {
+        _cancellationTaskSource = new();
+        LoadServicesCancellable().ContinueWith(task =>
+                Debug.LogException(task.Exception),
+            TaskContinuationOptions.OnlyOnFaulted);
+    }
+
+    private void OnDestroy()
+    {
+        //_cancellationTaskSource.SetResult(true);
+    }
+
+    private async Task LoadServicesCancellable()
+    {
+        await Task.WhenAny(LoadServices(), _cancellationTaskSource.Task);
+    }
+
+    private async Task LoadServices()
+    {
+        string environmentId = IsDevBuild ? "dev" : "production";
+
+        ServicesInitializer servicesInitializer = new ServicesInitializer(environmentId);
+
+        //create services
+        GameConfigService gameConfig = new GameConfigService();
+        GameProgressionService gameProgression = new GameProgressionService();
+
+        RemoteConfigGameService remoteConfig = new RemoteConfigGameService();
+        LoginGameService loginService = new LoginGameService();
+        AnalyticsGameService analyticsService = new AnalyticsGameService();
+        AdsGameService adsService = new AdsGameService("4928685", "Rewarded_Android");
+
+        //register services
+        ServiceLocator.RegisterService(gameConfig);
+        ServiceLocator.RegisterService(gameProgression);
+        ServiceLocator.RegisterService(remoteConfig);
+        ServiceLocator.RegisterService(loginService);
+        ServiceLocator.RegisterService(adsService);
+        ServiceLocator.RegisterService(analyticsService);
+
+        //initialize services
+        await servicesInitializer.Initialize();
+        await loginService.Initialize();
+        await remoteConfig.Initialize();
+        await analyticsService.Initialize();
+        bool adsInitialized = await adsService.Initialize(Application.isEditor);
+
+        Debug.Log("AdsInitialized: " + adsInitialized);
+
+        gameConfig.Initialize(remoteConfig);
+        gameProgression.Initialize(gameConfig);
+    }
+
 }
