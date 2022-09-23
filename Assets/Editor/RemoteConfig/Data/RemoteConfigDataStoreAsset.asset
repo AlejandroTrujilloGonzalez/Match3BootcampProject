@@ -12,12 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fc0de744-8503-486d-b00b-5c2912427a16\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
-    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fc0de744-8503-486d-b00b-5c2912427a16\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerInitialGold\",\r\n      \"type\":
-    \"int\",\r\n      \"value\": 100\r\n    }\r\n  }\r\n]"
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c2e4f3f7-d25c-4548-964e-3d4ebbb8cbd8\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"a7699273-3525-4382-af1b-ec25673b3ee6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"95be4108-10bb-455d-9eaf-d89a9e5b7365\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"dac78bdb-1754-4679-b83c-8d6152e48f3e\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"55c012cc-1391-41d8-a14f-92bafec575c2\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"GoldInGoldPack\",\r\n      \"type\":
+    \"int\",\r\n      \"value\": 1000\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"d5cd8e17-3701-4265-a8f5-63e0096ccbe8\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 50\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"cade79de-a0df-4a0c-b9c9-5a83ad353ea9\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GemsPerIAP\",\r\n      \"type\": \"int\",\r\n      \"value\": 10\r\n   
+    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c2e4f3f7-d25c-4548-964e-3d4ebbb8cbd8\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"a7699273-3525-4382-af1b-ec25673b3ee6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"95be4108-10bb-455d-9eaf-d89a9e5b7365\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"dac78bdb-1754-4679-b83c-8d6152e48f3e\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"55c012cc-1391-41d8-a14f-92bafec575c2\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"GoldInGoldPack\",\r\n      \"type\":
+    \"int\",\r\n      \"value\": 1000\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
+    {\r\n      \"entityId\": \"d5cd8e17-3701-4265-a8f5-63e0096ccbe8\"\r\n    },\r\n   
+    \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 50\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"cade79de-a0df-4a0c-b9c9-5a83ad353ea9\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"GemsPerIAP\",\r\n      \"type\": \"int\",\r\n      \"value\": 10\r\n   
+    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   
     \"name\": \"dev\",\r\n    \"id\": \"02ac6e61-4596-475f-8820-d459347f4b42\",\r\n   
     \"isDefault\": false,\r\n    \"createdAt\": \"2022-09-07T17:52:08Z\",\r\n   

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenuView : MonoBehaviour
 {
     public TMP_Text levelText;
     public TMP_Text energyText;
