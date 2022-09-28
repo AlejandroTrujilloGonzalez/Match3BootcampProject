@@ -31,16 +31,13 @@ public class LevelController
         DataController.Instance.data.playerCurrentLevel++;
         DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerVictory;
         DataManager.Save();
-        Debug.Log("You win");
-        SceneLoader.Instance.LoadScene(0);
     }
 
-    public void GameOver()
+    public void LoseLevel()
     {
         DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerDefeat;
         DataController.Instance.data.playerEnergy--;
         DataManager.Save();
-        SceneLoader.Instance.LoadScene(0);
     }
 
 }

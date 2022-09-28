@@ -12,5 +12,6 @@ public enum GameplayConstants
     verticalArrow = 7,
     nArrowMatch = 4,
     goldPerVictory = 10,
-    goldPerDefeat = 5
+    goldPerDefeat = 5,
+    adExtraGold = 10
 }

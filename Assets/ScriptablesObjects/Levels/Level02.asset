@@ -15,4 +15,6 @@ MonoBehaviour:
   id: 2
   moves: 25
   maxTilesTypes: 4
+  boardWidth: 6
+  boardHeight: 5
   enemy: {fileID: 11400000, guid: a6571586eb7052c43893da05a08ec721, type: 2}

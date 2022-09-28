@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   moves: 30
-  maxTilesTypes: 5
+  maxTilesTypes: 4
+  boardWidth: 6
+  boardHeight: 5
   enemy: {fileID: 11400000, guid: 27bb0eef7e3bff641ab679e153ae5ffa, type: 2}

@@ -9,14 +9,14 @@ namespace Game.Services
         IService
     {
         private string _adsGameId;
-        private string _adUnitId;        
+        private string _adUnitId;
+        private bool _isAdLoaded = false;
 
         public bool IsAdReady => IsInitialized && _isAdLoaded;
         public bool IsInitialized => _initializationTaskStatus == TaskStatus.RanToCompletion;
 
         private TaskStatus _initializationTaskStatus = TaskStatus.Created;
-        private TaskStatus _showTaskStatus = TaskStatus.Created;
-        private bool _isAdLoaded;
+        private TaskStatus _showTaskStatus = TaskStatus.Created;        
 
         public AdsGameService(string adsGameId, string adUnitId)
         {

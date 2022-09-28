@@ -8,5 +8,7 @@ public class LevelSO : ScriptableObject
     public int id;
     public int moves;
     public int maxTilesTypes;
+    public int boardWidth;
+    public int boardHeight;
     public EnemySO enemy;
 }

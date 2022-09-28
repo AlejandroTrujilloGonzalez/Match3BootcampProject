@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Services;
 using TMPro;
+using UnityEngine.UI;
 
 public class BoardView : MonoBehaviour
 {
@@ -27,10 +29,14 @@ public class BoardView : MonoBehaviour
     public TMP_Text enemyLifeText;
     public GameObject enemy;
 
-    public GameObject loseFrame;
-    public GameObject winFrame;
+    public GameObject losePanel;
+    public GameObject winPanel;
+    public Button _adButton = null;
 
     private int nTilesDestroyed = 0;
+
+    //Services
+    private AnalyticsGameService _analytics = null;
 
     private bool IsAnimating => animations.Count > 0;
 
@@ -39,18 +45,16 @@ public class BoardView : MonoBehaviour
         if (inputCamera == null)
             inputCamera = Camera.main;
 
-        //Board setting
         inputPlane = new Plane(Vector3.forward, Vector3.zero);
-        boardController = new BoardController(boardSize.x, boardSize.y);
-        boardController.OnTileCreated += OnTileCreated;
-        boardController.OnTileMoved += OnTileMoved;
-        boardController.OnTileDestroyed += OnTileDestroyed;        
+        _analytics = ServiceLocator.GetService<AnalyticsGameService>();
 
-        //Level setting
         InitializeLevel();
         UpdateTextMoves();
         UpdateEnemyLife();
-        
+
+        boardController.OnTileCreated += OnTileCreated;
+        boardController.OnTileMoved += OnTileMoved;
+        boardController.OnTileDestroyed += OnTileDestroyed;                
     }
 
     public void AddTileView(TileView tile)
@@ -98,11 +102,21 @@ public class BoardView : MonoBehaviour
             }
 
             if (levelController.GetMoves() <= 0)
-                ActivateVictoryLoseFrame(LoseFrameCoroutine());
+                OnLose();
 
             if (enemyController.GetLife() <= 0)
-                ActivateVictoryLoseFrame(WinFrameCoroutine());
+                OnWin();
         }     
+    }
+
+    private void InitializeLevel()
+    {
+        levelValues = levelListSO.levelList[DataController.Instance.data.playerCurrentLevel];
+        boardController = new BoardController(levelValues.boardWidth, levelValues.boardHeight);
+        boardController.maxTilesTypes = levelValues.maxTilesTypes;
+        levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes, levelValues.enemy);
+        enemyController = new EnemyController(levelValues.enemy.enemyName, levelValues.enemy.life);
+        enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
     }
 
     private void OnTileCreated(TileModel tile)
@@ -142,15 +156,6 @@ public class BoardView : MonoBehaviour
         }
     }
 
-    private void InitializeLevel()
-    {        
-        levelValues = levelListSO.levelList[DataController.Instance.data.playerCurrentLevel];
-        boardController.maxTilesTypes = levelValues.maxTilesTypes;
-        levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes, levelValues.enemy);
-        enemyController = new EnemyController(levelValues.enemy.enemyName, levelValues.enemy.life);
-        enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
-    }
-
     private void UpdateTextMoves()
     {
         movesText.text = levelController.GetMoves().ToString();
@@ -162,27 +167,42 @@ public class BoardView : MonoBehaviour
         enemyLifeText.text = enemyController.GetLife() + "/" + levelValues.enemy.life;
     }
 
-    private void ActivateVictoryLoseFrame(IEnumerator coroutine)
+    private void OnWin()
     {
-        StartCoroutine(coroutine);
+        winPanel.SetActive(true);
+        _adButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        _analytics.SendEvent("LevelWin");
+        levelController.WinLevel(); 
     }
 
-    IEnumerator WinFrameCoroutine()
+    private void OnLose()
     {
-        winFrame.SetActive(true);
-
-        yield return new WaitForSeconds(2);
-
-        levelController.WinLevel();
+        losePanel.SetActive(true);
+        _adButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        _analytics.SendEvent("LevelLose");
+        levelController.LoseLevel();
     }
 
-    IEnumerator LoseFrameCoroutine()
+    ////////////////////////////////////////////////////////Buttons
+    
+    public void ContinueRetry()
     {
-        loseFrame.SetActive(true);
+        SceneLoader.Instance.LoadScene(1);
+    }
 
-        yield return new WaitForSeconds(2);
+    public async void BackToMenuRewarded()
+    {
+        if (await ServiceLocator.GetService<AdsGameService>().ShowAd())
+        {
+            _analytics.SendEvent("RewardedAdViewed");
+            DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.adExtraGold;
+            SceneLoader.Instance.LoadScene(0);
+        }
+    }
 
-        levelController.GameOver();
+    public void BackToMenu()
+    {
+        SceneLoader.Instance.LoadScene(0);
     }
 
 }

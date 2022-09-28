@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
 using Game.Services;
-
+using System.Collections.Generic;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -91,6 +91,9 @@ public class SceneLoader : MonoBehaviour
         LoginGameService loginService = new LoginGameService();
         AnalyticsGameService analyticsService = new AnalyticsGameService();
         AdsGameService adsService = new AdsGameService("4928685", "Rewarded_Android");
+        UnityIAPGameService iapService = new UnityIAPGameService();
+        IGameProgressionProvider gameProgressionProvider = new GameProgressionProvider();
+        //LocalizationService localizationService = new LocalizationService();
 
         //register services
         ServiceLocator.RegisterService(gameConfig);
@@ -99,18 +102,24 @@ public class SceneLoader : MonoBehaviour
         ServiceLocator.RegisterService(loginService);
         ServiceLocator.RegisterService(adsService);
         ServiceLocator.RegisterService(analyticsService);
+        ServiceLocator.RegisterService<IIAPGameService>(iapService);
+        //ServiceLocator.RegisterService(localizationService);
 
         //initialize services
         await servicesInitializer.Initialize();
         await loginService.Initialize();
         await remoteConfig.Initialize();
         await analyticsService.Initialize();
-        bool adsInitialized = await adsService.Initialize(Application.isEditor);
-
-        Debug.Log("AdsInitialized: " + adsInitialized);
+        await iapService.Initialize(new Dictionary<string, string>
+        {
+            ["test1"] = "es.SnakeBiteStudio.TapMonsters.test1"
+        });
+        await adsService.Initialize(Application.isEditor);
+        await gameProgressionProvider.Initialize();
+        //localizationService.Initialize("Spanish", true);
 
         gameConfig.Initialize(remoteConfig);
-        gameProgression.Initialize(gameConfig);
+        gameProgression.Initialize(gameConfig, gameProgressionProvider);
     }
 
 }
