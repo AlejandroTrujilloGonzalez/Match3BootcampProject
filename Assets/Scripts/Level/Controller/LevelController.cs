@@ -29,13 +29,13 @@ public class LevelController
     public void WinLevel()
     {
         DataController.Instance.data.playerCurrentLevel++;
-        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerVictory;
+        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + ServiceLocator.GetService<GameConfigService>().GoldPerWin;
         DataManager.Save();
     }
 
     public void LoseLevel()
     {
-        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.goldPerDefeat;
+        DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + ServiceLocator.GetService<GameConfigService>().GoldPerDefeat;
         DataController.Instance.data.playerEnergy--;
         DataManager.Save();
     }

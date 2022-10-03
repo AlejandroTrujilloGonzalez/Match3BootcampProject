@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class BoardView : MonoBehaviour
 {
+    //Board
     public Vector2Int boardSize = new Vector2Int(7, 6);
 
     public Camera inputCamera;    
@@ -37,6 +38,7 @@ public class BoardView : MonoBehaviour
     private int nTilesDestroyed = 0;
 
     //Services
+    private GameConfigService _gameConfig;
     private AnalyticsGameService _analytics = null;
 
     private bool IsAnimating => animations.Count > 0;
@@ -48,6 +50,7 @@ public class BoardView : MonoBehaviour
 
         inputPlane = new Plane(Vector3.forward, Vector3.zero);
         _analytics = ServiceLocator.GetService<AnalyticsGameService>();
+        _gameConfig = ServiceLocator.GetService<GameConfigService>();
 
         InitializeLevel();
         UpdateTextMoves();
@@ -196,7 +199,7 @@ public class BoardView : MonoBehaviour
         if (await ServiceLocator.GetService<AdsGameService>().ShowAd())
         {
             _analytics.SendEvent("RewardedAdViewed");
-            DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + (int)GameplayConstants.adExtraGold;
+            DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + _gameConfig.GoldPerAd;
             SceneLoader.Instance.LoadScene(0);
         }
     }
