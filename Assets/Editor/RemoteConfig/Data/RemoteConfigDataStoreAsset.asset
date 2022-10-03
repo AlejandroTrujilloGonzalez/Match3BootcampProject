@@ -12,42 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d6ec93af-565d-4789-a406-832ffdcd9244\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d611e02a-d7e7-42bd-a264-e69f95c8d3c7\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"8790a09a-8e44-417f-b32a-e05117545611\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"6c7e1aca-7b19-4654-b942-315d61708249\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"8874cad6-1a9f-4e69-adeb-dd8cfc2d7295\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ba13a1db-38f3-40f9-9fa1-93c4cafba143\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"127dddab-6c26-4024-88c1-14ba7614e978\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d36b1bed-c4a3-4f46-801a-669ca91f0673\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1a3b75cd-495f-410c-ad46-3d5de4b96d71\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f1dd5564-83fc-43e5-9f65-aecb1dc18d9c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldInGoldPack\",\r\n      \"type\":
     \"int\",\r\n      \"value\": 1000\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"3a0e5c19-effb-4fd9-8c74-c340869c395d\"\r\n    },\r\n   
+    {\r\n      \"entityId\": \"9f22afbf-3f5a-4f5a-88a4-baf36b7669bb\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 50\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"eef177ee-c675-4539-99ad-a2581102dafb\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"75899701-a377-4ebb-ac71-04bfedd603c3\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GemsPerIAP\",\r\n      \"type\": \"int\",\r\n      \"value\": 10\r\n   
     }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d6ec93af-565d-4789-a406-832ffdcd9244\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d611e02a-d7e7-42bd-a264-e69f95c8d3c7\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"8790a09a-8e44-417f-b32a-e05117545611\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"6c7e1aca-7b19-4654-b942-315d61708249\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"8874cad6-1a9f-4e69-adeb-dd8cfc2d7295\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"ba13a1db-38f3-40f9-9fa1-93c4cafba143\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"127dddab-6c26-4024-88c1-14ba7614e978\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"d36b1bed-c4a3-4f46-801a-669ca91f0673\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1a3b75cd-495f-410c-ad46-3d5de4b96d71\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f1dd5564-83fc-43e5-9f65-aecb1dc18d9c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldInGoldPack\",\r\n      \"type\":
     \"int\",\r\n      \"value\": 1000\r\n    }\r\n  },\r\n  {\r\n    \"metadata\":
-    {\r\n      \"entityId\": \"3a0e5c19-effb-4fd9-8c74-c340869c395d\"\r\n    },\r\n   
+    {\r\n      \"entityId\": \"9f22afbf-3f5a-4f5a-88a4-baf36b7669bb\"\r\n    },\r\n   
     \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 50\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"eef177ee-c675-4539-99ad-a2581102dafb\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"75899701-a377-4ebb-ac71-04bfedd603c3\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GemsPerIAP\",\r\n      \"type\": \"int\",\r\n      \"value\": 10\r\n   
     }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   

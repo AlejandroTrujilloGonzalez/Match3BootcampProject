@@ -31,7 +31,8 @@ public class BoardView : MonoBehaviour
 
     public GameObject losePanel;
     public GameObject winPanel;
-    public Button _adButton = null;
+    public Button loseAdButton = null;
+    public Button winAdButton = null;
 
     private int nTilesDestroyed = 0;
 
@@ -170,7 +171,7 @@ public class BoardView : MonoBehaviour
     private void OnWin()
     {
         winPanel.SetActive(true);
-        _adButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        winAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
         _analytics.SendEvent("LevelWin");
         levelController.WinLevel(); 
     }
@@ -178,7 +179,7 @@ public class BoardView : MonoBehaviour
     private void OnLose()
     {
         losePanel.SetActive(true);
-        _adButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        loseAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
         _analytics.SendEvent("LevelLose");
         levelController.LoseLevel();
     }

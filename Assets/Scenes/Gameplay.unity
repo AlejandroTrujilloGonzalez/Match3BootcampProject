@@ -3385,7 +3385,8 @@ MonoBehaviour:
   enemy: {fileID: 798440924}
   losePanel: {fileID: 615855599}
   winPanel: {fileID: 855266699}
-  _adButton: {fileID: 0}
+  loseAdButton: {fileID: 1001356888}
+  winAdButton: {fileID: 2081510431}
 --- !u!1 &1155870827
 GameObject:
   m_ObjectHideFlags: 0
