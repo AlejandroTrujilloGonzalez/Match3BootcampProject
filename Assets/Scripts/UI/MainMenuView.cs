@@ -25,4 +25,9 @@ public class MainMenuView : MonoBehaviour
         goldText.text = DataController.Instance.data.playerGold.ToString();
     }
 
+    public void ChangeScene(int sceneId)
+    {
+        SceneLoader.Instance.LoadScene(sceneId);
+    }
+
 }
