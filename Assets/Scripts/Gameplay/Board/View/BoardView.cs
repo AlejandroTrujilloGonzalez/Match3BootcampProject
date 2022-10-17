@@ -4,6 +4,7 @@ using UnityEngine;
 using Game.Services;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BoardView : MonoBehaviour
 {
@@ -86,12 +87,13 @@ public class BoardView : MonoBehaviour
         if (IsAnimating)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             var ray = inputCamera.ScreenPointToRay(Input.mousePosition);
             if (inputPlane.Raycast(ray, out float hitDistance))
             {
                 Vector3 hitPosition = ray.GetPoint(hitDistance);
+                Debug.Log(hitPosition);
                 boardController.ProcessInput(new Vector2Int((int)hitPosition.x, (int)hitPosition.y));
 
                 if (boardController.isMatch)
@@ -105,11 +107,15 @@ public class BoardView : MonoBehaviour
                 nTilesDestroyed = 0;
             }
 
-            if (levelController.GetMoves() <= 0)
-                OnLose();
-
             if (enemyController.GetLife() <= 0)
+            {
                 OnWin();
+            }
+            else if (levelController.GetMoves() <= 0)
+            {
+                OnLose();
+            }
+                
         }     
     }
 
@@ -120,7 +126,8 @@ public class BoardView : MonoBehaviour
         boardController.maxTilesTypes = levelValues.maxTilesTypes;
         levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes, levelValues.enemy);
         enemyController = new EnemyController(levelValues.enemy.enemyName, levelValues.enemy.life);
-        enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
+        //enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
+        enemy.GetComponent<Image>().sprite = levelValues.enemy.sprite;
     }
 
     private void OnTileCreated(TileModel tile)

@@ -19,7 +19,7 @@ public class MainMenuView : MonoBehaviour
 
     private void UpdateAllText()
     {
-        levelText.text = "LEVEL " + DataController.Instance.data.playerCurrentLevel.ToString();
+        levelText.text = "LEVEL " + (DataController.Instance.data.playerCurrentLevel + 1).ToString();
         energyText.text = DataController.Instance.data.playerEnergy.ToString() + " / " + maxEnergy;
         gemsText.text = DataController.Instance.data.playerGems.ToString();
         goldText.text = DataController.Instance.data.playerGold.ToString();

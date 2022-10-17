@@ -24,7 +24,7 @@ public class BoardController
     {
         if (touchedPos.x >= 0 && touchedPos.y >= 0 && touchedPos.y < model.Height && touchedPos.x < model.Width)
         {
-            isMatch = true;
+            isMatch = true; //TODO: Modificar
             ProcessMatches(touchedPos);
         }
 
