@@ -9,32 +9,45 @@ using UnityEngine.EventSystems;
 public class BoardView : MonoBehaviour
 {
     //Board
-    public Vector2Int boardSize = new Vector2Int(7, 6);
+    [SerializeField]
+    private Vector2Int boardSize = new Vector2Int(7, 6);
 
-    public Camera inputCamera;    
+    [SerializeField]
+    private Camera inputCamera;    
 
     private Plane inputPlane;
     private List<TileView> tiles = new List<TileView>();
-    public BoardController boardController;
+    private BoardController boardController;
     private List<IViewAnim> animations = new List<IViewAnim>();
 
     //Level
-    public LevelController levelController;
-    public LevelListSO levelListSO;
+    private LevelController levelController;
+    [SerializeField]
+    private LevelListSO levelListSO;
     private LevelSO levelValues;
 
-    public TMP_Text idText;
-    public TMP_Text movesText;
-    public TMP_Text goalText;
+    [SerializeField]
+    private TMP_Text idText;
+    [SerializeField]
+    private TMP_Text movesText;
+    [SerializeField]
+    private TMP_Text goalText;
 
-    public EnemyController enemyController;
-    public TMP_Text enemyLifeText;
-    public GameObject enemy;
+    [SerializeField]
+    private EnemyController enemyController;
+    [SerializeField]
+    private TMP_Text enemyLifeText;
+    [SerializeField]
+    private GameObject enemy;
 
-    public GameObject losePanel;
-    public GameObject winPanel;
-    public Button loseAdButton = null;
-    public Button winAdButton = null;
+    [SerializeField]
+    private GameObject losePanel;
+    [SerializeField]
+    private GameObject winPanel;
+    [SerializeField]
+    private Button loseAdButton = null;
+    [SerializeField]
+    private Button winAdButton = null;
 
     private int nTilesDestroyed = 0;
 

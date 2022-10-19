@@ -13,7 +13,6 @@ public class GameProgressionService : IService
     public int Gold => _gold;
 
     public int Gems;
-    public int BoosterAmount;
     public int CurrentLevel;
 
     public event Action OnInventoryChanged;
@@ -63,13 +62,6 @@ public class GameProgressionService : IService
     public void UpdateGems(int amount)
     {
         Gems += amount;
-        OnInventoryChanged?.Invoke();
-        Save();
-    }
-
-    public void UpdateBooster(int amount)
-    {
-        BoosterAmount += amount;
         OnInventoryChanged?.Invoke();
         Save();
     }
