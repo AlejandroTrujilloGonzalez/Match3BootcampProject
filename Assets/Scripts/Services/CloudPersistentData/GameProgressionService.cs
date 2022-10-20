@@ -13,6 +13,7 @@ public class GameProgressionService : IService
     public int Gold => _gold;
 
     public int Gems;
+    public int Energy;
     public int CurrentLevel;
 
     public event Action OnInventoryChanged;
@@ -33,6 +34,7 @@ public class GameProgressionService : IService
         if (string.IsNullOrEmpty(data))
         {
             Gems = config.InitialGems;
+            Energy = config.InitialEnergy;
             _gold = config.InitialGold;
             Save();
         }
@@ -57,6 +59,13 @@ public class GameProgressionService : IService
             {
                 ["amount"] = amount
             });
+    }
+
+    public void UpdateEnergy(int amount)
+    {
+        Energy += amount;
+        OnInventoryChanged?.Invoke();
+        Save();
     }
 
     public void UpdateGems(int amount)

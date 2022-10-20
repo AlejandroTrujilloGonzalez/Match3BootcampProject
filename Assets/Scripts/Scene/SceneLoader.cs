@@ -11,9 +11,12 @@ public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
 
-    public GameObject loadingCanvas;
-    public Slider slider;
-    public TMP_Text progressText;
+    [SerializeField]
+    private GameObject loadingCanvas;
+    [SerializeField]
+    private Slider loadingSlider;
+    [SerializeField]
+    private TMP_Text progressText;
 
     [SerializeField]
     private bool IsDevBuild = true;
@@ -49,7 +52,7 @@ public class SceneLoader : MonoBehaviour
         while (!op.isDone)
         {
             float loadProgress = Mathf.Clamp01(op.progress / .9f);
-            slider.value = loadProgress;
+            loadingSlider.value = loadProgress;
             progressText.text = loadProgress * 100f + "%";
 
             yield return null;
@@ -91,9 +94,7 @@ public class SceneLoader : MonoBehaviour
         LoginGameService loginService = new LoginGameService();
         AnalyticsGameService analyticsService = new AnalyticsGameService();
         AdsGameService adsService = new AdsGameService("4928685", "Rewarded_Android");
-        UnityIAPGameService iapService = new UnityIAPGameService();
         IGameProgressionProvider gameProgressionProvider = new GameProgressionProvider();
-        //LocalizationService localizationService = new LocalizationService();
 
         //register services
         ServiceLocator.RegisterService(gameConfig);
@@ -102,21 +103,14 @@ public class SceneLoader : MonoBehaviour
         ServiceLocator.RegisterService(loginService);
         ServiceLocator.RegisterService(adsService);
         ServiceLocator.RegisterService(analyticsService);
-        ServiceLocator.RegisterService<IIAPGameService>(iapService);
-        //ServiceLocator.RegisterService(localizationService);
 
         //initialize services
         await servicesInitializer.Initialize();
         await loginService.Initialize();
         await remoteConfig.Initialize();
         await analyticsService.Initialize();
-        await iapService.Initialize(new Dictionary<string, string>
-        {
-            ["test1"] = "es.SnakeBiteStudio.TapMonsters.test1"
-        });
         await adsService.Initialize(Application.isEditor);
         await gameProgressionProvider.Initialize();
-        //localizationService.Initialize("Spanish", true);
 
         gameConfig.Initialize(remoteConfig);
         gameProgression.Initialize(gameConfig, gameProgressionProvider);

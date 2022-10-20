@@ -10,10 +10,18 @@ public class ShopView : MonoBehaviour
     private GameProgressionService _gameProgression;
     private AdsGameService _adsService;
 
+    //Buttons
     [SerializeField]
     private Button _adGoldButton;
     [SerializeField]
+    private Button _buyEnergyButton;
+
+    //Text
+    [SerializeField]
     private TMP_Text _goldCostText = null;
+
+    [SerializeField]
+    private TMP_Text _energyText = null;
     [SerializeField]
     private TMP_Text _adGoldText = null;
 
@@ -22,11 +30,14 @@ public class ShopView : MonoBehaviour
         _gameConfig = ServiceLocator.GetService<GameConfigService>();
         _gameProgression = ServiceLocator.GetService<GameProgressionService>();
         _adsService = ServiceLocator.GetService<AdsGameService>();
+
     }
 
     private void Start()
     {
-        _adGoldText.text = _gameConfig.GoldPerAd.ToString();
+        _goldCostText.text = _gameConfig.EnergyGoldCost.ToString() + " Gold";
+        _energyText.text = _gameConfig.EnergyPerBuy.ToString() + " Energy";
+        _adGoldText.text = _gameConfig.GoldPerAd.ToString() + " Gold";
 
         UpdateCards();
     }
@@ -50,6 +61,15 @@ public class ShopView : MonoBehaviour
         }
 
         _adGoldButton.interactable = true;
+    }
+
+    //Buttons behaviour
+
+    public void PurchaseEnergy()
+    {
+        _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
+        _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);
+        UpdateCards();
     }
 
     public async void PurchaseAdGold()
