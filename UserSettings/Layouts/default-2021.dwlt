@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 24
+  controlID: 65
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 25
+  controlID: 66
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 26
+  controlID: 67
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -746,21 +746,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: da2dffff0a2fffff2031ffff5e3effff983fffff727dfffff6c3fffffaf6ffff20fbfffff4ffffff726b0000d06b0000dc6b0000f86b0000146c00006a6c0000e6f60000bcf80000ecfb000084fc0000b4fc0000d0fc0000defc0000fcfc0000
+      m_ExpandedIDs: 26fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Text_Energy
-        m_OriginalName: Text_Energy
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 64636
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1017,9 +1017,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -22.745605, y: 1370.5273, z: -16.60083}
+    m_Target: {x: 532.15045, y: 997.3471, z: -10.690453}
     speed: 2
-    m_Value: {x: -22.745605, y: 1370.5273, z: -16.60083}
+    m_Value: {x: 532.15045, y: 997.3471, z: -10.690453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1070,9 +1070,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1630.6641
+    m_Target: 1045.5142
     speed: 2
-    m_Value: 1630.6641
+    m_Value: 1045.5142
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1138,36 +1138,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UserData/LocalPersistentData
+    - Assets/Scripts/Services
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/UserData/LocalPersistentData
+  - Assets/Scripts/Services
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Proyectos\Repo\Unity\Match3BootcampProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 400}
-    m_SelectedIDs: 166e0000
-    m_LastClickedID: 28182
-    m_ExpandedIDs: 00000000cc6d0000ce6d0000d06d0000d26d0000d46d0000d66d0000d86d0000da6d0000de6d0000e06d0000e26d0000e46d0000e66d00000e6e0000126e0000da780000888f0000
+    scrollPos: {x: 0, y: 240}
+    m_SelectedIDs: 166c0000
+    m_LastClickedID: 27670
+    m_ExpandedIDs: 00000000f86b0000fa6b0000006c0000026c0000086c00000a6c00000c6c00000e6c0000106c0000126c0000146c0000166c0000306c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: NymphaArt
-      m_OriginalName: NymphaArt
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30752
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -1181,7 +1181,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc6d0000ce6d0000d06d0000d26d0000d46d0000d66d0000d86d0000da6d0000dc6d0000de6d0000e06d0000e26d0000e46d0000e66d0000
+    m_ExpandedIDs: 00000000f86b0000fa6b0000fc6b0000fe6b0000006c0000026c0000046c0000066c0000086c00000a6c00000c6c00000e6c0000106c0000126c0000146c0000166c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300004c890000d4ce030084600000d2750000de64000038890000c28a0000c06b0000fe690000bc6d0000f488000080940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 236
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - D:\Proyectos\Repo\Unity\Match3BootcampProject\Library\PlayModeViewStates\16c74eff6a8fc5548a65b49d3edc67a0
+  - D:\Proyectos\Repo\Unity\Match3BootcampProject\Library\PlayModeViewStates\db353731800f67d46838cf437e2f0b54
   m_PlayModeViewName: GameView
   m_ShowGizmos: 1
   m_TargetDisplay: 0
@@ -1367,7 +1367,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -1380,7 +1380,7 @@ MonoBehaviour:
       y: 21
       width: 477
       height: 604
-    m_Scale: {x: 0.31458333, y: 0.31458333}
+    m_Scale: {x: 0.32552084, y: 0.32552084}
     m_Translation: {x: 238.5, y: 302}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1388,12 +1388,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -758.1457
-      y: -960
-      width: 1516.2914
-      height: 1920
+      x: -732.672
+      y: -927.74396
+      width: 1465.344
+      height: 1855.4879
     m_MinimalGUI: 1
-  m_defaultScale: 0.31458333
+  m_defaultScale: 0.32552084
   m_LastWindowPixelSize: {x: 477, y: 625}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1

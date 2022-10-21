@@ -54,6 +54,7 @@ public class BoardView : MonoBehaviour
     //Services
     private GameConfigService _gameConfig;
     private AnalyticsGameService _analytics = null;
+    private GameProgressionService _gameProgression;
 
     private bool IsAnimating => animations.Count > 0;
 
@@ -65,6 +66,7 @@ public class BoardView : MonoBehaviour
         inputPlane = new Plane(Vector3.forward, Vector3.zero);
         _analytics = ServiceLocator.GetService<AnalyticsGameService>();
         _gameConfig = ServiceLocator.GetService<GameConfigService>();
+        _gameProgression = ServiceLocator.GetService<GameProgressionService>();
 
         InitializeLevel();
         UpdateTextMoves();
@@ -134,12 +136,11 @@ public class BoardView : MonoBehaviour
 
     private void InitializeLevel()
     {
-        levelValues = levelListSO.levelList[DataController.Instance.data.playerCurrentLevel];
+        levelValues = levelListSO.levelList[_gameProgression.CurrentLevel];
         boardController = new BoardController(levelValues.boardWidth, levelValues.boardHeight);
         boardController.maxTilesTypes = levelValues.maxTilesTypes;
         levelController = new LevelController(levelValues.id, levelValues.moves, levelValues.maxTilesTypes, levelValues.enemy);
         enemyController = new EnemyController(levelValues.enemy.enemyName, levelValues.enemy.life);
-        //enemy.GetComponent<SpriteRenderer>().sprite = levelValues.enemy.sprite;
         enemy.GetComponent<Image>().sprite = levelValues.enemy.sprite;
     }
 
@@ -195,8 +196,9 @@ public class BoardView : MonoBehaviour
     {
         winPanel.SetActive(true);
         winAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        _gameProgression.UpdateCurrentLevel(1);
+        _gameProgression.UpdateGold(_gameConfig.GoldPerWin);
         _analytics.SendEvent("LevelWin");
-        levelController.WinLevel(); 
     }
 
     private void OnLose()
@@ -204,29 +206,28 @@ public class BoardView : MonoBehaviour
         losePanel.SetActive(true);
         loseAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
         _analytics.SendEvent("LevelLose");
-        levelController.LoseLevel();
     }
 
     ////////////////////////////////////////////////////////Buttons
     
     public void ContinueRetry()
     {
-        SceneLoader.Instance.LoadScene(1);
+        SceneLoader.Instance.LoadScene((int)GameplayConstants.gameplaySceneId);
     }
 
     public async void BackToMenuRewarded()
     {
         if (await ServiceLocator.GetService<AdsGameService>().ShowAd())
         {
-            _analytics.SendEvent("RewardedAdViewed");
-            DataController.Instance.data.playerGold = DataController.Instance.data.playerGold + _gameConfig.GoldPerAd;
-            SceneLoader.Instance.LoadScene(0);
+            _analytics.SendEvent("RewardedAdViewed");           
+            _gameProgression.UpdateGold(_gameConfig.GoldPerAd);
+            SceneLoader.Instance.LoadScene((int)GameplayConstants.mainMenuSceneId);
         }
     }
 
     public void BackToMenu()
     {
-        SceneLoader.Instance.LoadScene(0);
+        SceneLoader.Instance.LoadScene((int)GameplayConstants.mainMenuSceneId);
     }
 
 }

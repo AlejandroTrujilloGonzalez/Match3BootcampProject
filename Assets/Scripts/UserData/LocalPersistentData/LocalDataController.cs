@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataController : MonoBehaviour
+public class LocalDataController : MonoBehaviour
 {
-    public static DataController Instance;
-    public PlayerData data;
+    public static LocalDataController Instance;
+    public PlayerLocalData data;
     private void Awake()
     {
 
@@ -19,8 +19,8 @@ public class DataController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        data = DataManager.Load();
-        DataManager.Save();
+        data = LocalDataManager.Load();
+        LocalDataManager.Save();
     }
     
 }

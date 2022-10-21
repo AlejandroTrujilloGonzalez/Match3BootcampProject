@@ -1,5 +1,5 @@
 [System.Serializable]
-public class PlayerData
+public class PlayerLocalData
 {
     public string playerId;
     public int playerCurrentLevel;

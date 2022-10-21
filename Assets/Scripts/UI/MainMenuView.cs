@@ -5,24 +5,33 @@ using TMPro;
 
 public class MainMenuView : MonoBehaviour
 {
-    public TMP_Text levelText;
-    public TMP_Text energyText;
-    public TMP_Text gemsText;
-    public TMP_Text goldText;
+    [SerializeField]
+    private TMP_Text levelText;
+    [SerializeField]
+    private TMP_Text energyText;
+    [SerializeField]
+    private TMP_Text gemsText;
+    [SerializeField]
+    private TMP_Text goldText;
 
-    public int maxEnergy = 5;
+    private GameProgressionService _gameProgression;
+
+    private void Awake()
+    {
+        _gameProgression = ServiceLocator.GetService<GameProgressionService>();
+    }
 
     void Start()
     {
-        UpdateAllText();
+        UpdateMainMenuText();
     }
 
-    private void UpdateAllText()
+    private void UpdateMainMenuText()
     {
-        levelText.text = "LEVEL " + (DataController.Instance.data.playerCurrentLevel + 1).ToString();
-        energyText.text = DataController.Instance.data.playerEnergy.ToString() + " / " + maxEnergy;
-        gemsText.text = DataController.Instance.data.playerGems.ToString();
-        goldText.text = DataController.Instance.data.playerGold.ToString();
+        levelText.text = "LEVEL " + (_gameProgression.CurrentLevel + 1);
+        energyText.text = _gameProgression.Energy + " / " + (int)GameplayConstants.maxEnergy;
+        gemsText.text = _gameProgression.Gems.ToString();
+        goldText.text = _gameProgression.Gold.ToString();
     }
 
     public void ChangeScene(int sceneId)

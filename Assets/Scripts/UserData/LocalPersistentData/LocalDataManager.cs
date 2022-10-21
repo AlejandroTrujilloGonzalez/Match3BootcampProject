@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO;
 
-public class DataManager
+public class LocalDataManager
 {
     public static string directory = "/SaveData/";
     public static string fileName = "PlayerData.json";
@@ -13,18 +13,18 @@ public class DataManager
         if (!Directory.Exists(dir))
             Directory.CreateDirectory(dir);
 
-        string json = JsonUtility.ToJson(DataController.Instance.data, true);
+        string json = JsonUtility.ToJson(LocalDataController.Instance.data, true);
         File.WriteAllText(dir + fileName, json);
     }
 
-    public static PlayerData Load()
+    public static PlayerLocalData Load()
     {
         string dir = Application.persistentDataPath + directory + fileName;
-        PlayerData data = DataController.Instance.data;
+        PlayerLocalData data = LocalDataController.Instance.data;
 
         if (File.Exists(dir)){
             string json = File.ReadAllText(dir);
-            data = JsonUtility.FromJson<PlayerData>(json);
+            data = JsonUtility.FromJson<PlayerLocalData>(json);
         }
         else
         {

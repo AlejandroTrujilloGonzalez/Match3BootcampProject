@@ -25,6 +25,13 @@ public class ShopView : MonoBehaviour
     [SerializeField]
     private TMP_Text _adGoldText = null;
 
+    [SerializeField]
+    private TMP_Text _statusEnergyText;
+    [SerializeField]
+    private TMP_Text _statusGemsText;
+    [SerializeField]
+    private TMP_Text _statusGoldText;
+
     private void Awake()
     {
         _gameConfig = ServiceLocator.GetService<GameConfigService>();
@@ -53,6 +60,13 @@ public class ShopView : MonoBehaviour
         }
     }
 
+    private void UpdateStatusBar()
+    {
+        _statusEnergyText.text = _gameProgression.Energy + " / " + (int)GameplayConstants.maxEnergy;
+        _statusGemsText.text = _gameProgression.Gems.ToString();
+        _statusGoldText.text = _gameProgression.Gold.ToString();
+    }
+
     IEnumerator WaitForAdReady()
     {
         while (!_adsService.IsAdReady)
@@ -69,6 +83,8 @@ public class ShopView : MonoBehaviour
     {
         _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
         _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);
+
+        UpdateStatusBar();
         UpdateCards();
     }
 
@@ -77,6 +93,7 @@ public class ShopView : MonoBehaviour
         if (await ServiceLocator.GetService<AdsGameService>().ShowAd())
         {
             _gameProgression.UpdateGold(_gameConfig.GoldPerAd);
+            UpdateStatusBar();
             UpdateCards();
         }
         else

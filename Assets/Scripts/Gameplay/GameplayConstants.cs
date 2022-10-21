@@ -9,5 +9,8 @@ public enum GameplayConstants
     nBombMatch = 6,
     horizontalArrow = 6,
     verticalArrow = 7,
-    nArrowMatch = 4
+    nArrowMatch = 4,
+    maxEnergy = 5,
+    mainMenuSceneId = 1,
+    gameplaySceneId = 2
 }

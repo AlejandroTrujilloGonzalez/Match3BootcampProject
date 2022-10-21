@@ -75,6 +75,12 @@ public class GameProgressionService : IService
         Save();
     }
 
+    public void UpdateCurrentLevel(int amount)
+    {
+        CurrentLevel += amount;
+        Save();
+    }
+
     //save and load
     //end of save and load
 
