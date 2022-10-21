@@ -12,46 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6e12e6c8-b89a-4f4e-b337-10bdcd0ae40c\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d950b55e-4aff-4346-9eed-079f93c0c46a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"fc6849e2-e20d-4192-a754-00f08a67c15b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"a35df531-56cb-4f1f-a59d-a7a2e9267243\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0d51b53a-1552-408d-9c94-680ff0af5ca1\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"aeed3020-dd01-4948-83d3-926051c7b39d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"e23fa67a-40b7-4dfd-a82c-bf0fbed97688\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"b2e1113d-fac2-4513-aa60-c03d924f22e8\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"33516185-0828-4ea3-afea-0507469c5fa0\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4639b311-aab6-4239-9a60-d05042d5e957\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"05c6a4e3-df26-48c3-a241-3f0bd3c3dfc0\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"769cf248-80d5-4b22-a2ed-aa45ca15ceed\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnergyGoldCost\",\r\n      \"type\": \"int\",\r\n      \"value\":
-    100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"cd5668b4-f5eb-4f34-b537-94da6504e32e\"\r\n   
+    100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"2e046272-5ee5-472c-afbd-ac35d3864065\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnergyPerBuy\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 1\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"64eadc14-e9b5-467a-81f0-8965d4892507\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"76043325-ca57-4726-bf56-dc2543df164a\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialEnergy\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
     }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6e12e6c8-b89a-4f4e-b337-10bdcd0ae40c\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d950b55e-4aff-4346-9eed-079f93c0c46a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"InitialGold\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"fc6849e2-e20d-4192-a754-00f08a67c15b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"a35df531-56cb-4f1f-a59d-a7a2e9267243\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialGems\",\r\n      \"type\": \"int\",\r\n      \"value\": 0\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0d51b53a-1552-408d-9c94-680ff0af5ca1\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"aeed3020-dd01-4948-83d3-926051c7b39d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerWin\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 15\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"e23fa67a-40b7-4dfd-a82c-bf0fbed97688\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"b2e1113d-fac2-4513-aa60-c03d924f22e8\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"GoldPerDefeat\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"33516185-0828-4ea3-afea-0507469c5fa0\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4639b311-aab6-4239-9a60-d05042d5e957\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"GoldPerAd\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"05c6a4e3-df26-48c3-a241-3f0bd3c3dfc0\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"769cf248-80d5-4b22-a2ed-aa45ca15ceed\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnergyGoldCost\",\r\n      \"type\": \"int\",\r\n      \"value\":
-    100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"cd5668b4-f5eb-4f34-b537-94da6504e32e\"\r\n   
+    100\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"2e046272-5ee5-472c-afbd-ac35d3864065\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"EnergyPerBuy\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 1\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"64eadc14-e9b5-467a-81f0-8965d4892507\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"76043325-ca57-4726-bf56-dc2543df164a\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"InitialEnergy\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
     }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"2c93e5a1-cfa1-43e1-a330-6f842a3366a7\",\r\n   

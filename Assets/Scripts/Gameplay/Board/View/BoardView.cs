@@ -108,7 +108,6 @@ public class BoardView : MonoBehaviour
             if (inputPlane.Raycast(ray, out float hitDistance))
             {
                 Vector3 hitPosition = ray.GetPoint(hitDistance);
-                Debug.Log(hitPosition);
                 boardController.ProcessInput(new Vector2Int((int)hitPosition.x, (int)hitPosition.y));
 
                 if (boardController.isMatch)
@@ -205,6 +204,7 @@ public class BoardView : MonoBehaviour
     {
         losePanel.SetActive(true);
         loseAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
+        _gameProgression.UpdateEnergy(-1);
         _analytics.SendEvent("LevelLose");
     }
 

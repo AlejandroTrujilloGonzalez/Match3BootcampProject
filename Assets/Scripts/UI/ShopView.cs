@@ -81,11 +81,13 @@ public class ShopView : MonoBehaviour
 
     public void PurchaseEnergy()
     {
-        _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
-        _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);
-
-        UpdateStatusBar();
-        UpdateCards();
+        if (_gameProgression.Gold >= 100)
+        {
+            _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
+            _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);
+            UpdateStatusBar();
+            UpdateCards();
+        }             
     }
 
     public async void PurchaseAdGold()
