@@ -24,7 +24,6 @@ public class BoardController
     {
         if (touchedPos.x >= 0 && touchedPos.y >= 0 && touchedPos.y < model.Height && touchedPos.x < model.Width)
         {
-            isMatch = true; //TODO: Modificar
             ProcessMatches(touchedPos);
         }
 
@@ -166,6 +165,7 @@ public class BoardController
         
         if (matchedTiles.Count >= (int)GameplayConstants.nMinimunMatch)
         {
+            isMatch = true;
             foreach (TileModel tile in matchedTiles)
             {
                 OnTileDestroyed(tile);
@@ -214,8 +214,9 @@ public class BoardController
     {
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int> { (int)GameplayConstants.horizontalArrow, (int)GameplayConstants.verticalArrow });
 
+        isMatch = true;
         if (touchedTile.item.tileElement == (int)GameplayConstants.horizontalArrow)
-        {
+        {            
             FireHorizontalArrow(touchedTile);
             if (matchedTiles.Count > 1)
             {
@@ -252,7 +253,7 @@ public class BoardController
     {
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int>());
         int bombRange = matchedTiles.Count > 1 ? 2 : 1;
-
+        isMatch = true;
         for (int y = -bombRange; y <= bombRange; ++y)
         {
             for (int x = -bombRange; x <= bombRange; ++x)

@@ -81,6 +81,12 @@ public class GameProgressionService : IService
         Save();
     }
 
+    public void ResetLevel()
+    {
+        CurrentLevel = 0;
+        Save();
+    }
+
     //save and load
     //end of save and load
 

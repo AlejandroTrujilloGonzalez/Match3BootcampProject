@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetLevelScript : MonoBehaviour
+public class TestingScript : MonoBehaviour
 {
     private GameProgressionService _gameProgression;
 
@@ -12,8 +12,18 @@ public class ResetLevelScript : MonoBehaviour
         _gameProgression = ServiceLocator.GetService<GameProgressionService>();
     }
 
-    public void ResetLevel()
+    public void SetLevel()
     {
-        _gameProgression.CurrentLevel = 0;
+        _gameProgression.ResetLevel();
+    }
+
+    public void SetEnergy()
+    {
+        _gameProgression.UpdateEnergy(5);
+    }
+
+    public void SetGold()
+    {
+        _gameProgression.UpdateGold(500);
     }
 }

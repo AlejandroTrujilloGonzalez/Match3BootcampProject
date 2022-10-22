@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MainMenuView : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class MainMenuView : MonoBehaviour
     private TMP_Text gemsText;
     [SerializeField]
     private TMP_Text goldText;
+
+    [SerializeField]
+    private Button startButton;
+
+    [SerializeField]
+    private LevelListSO levelList;
 
     private GameProgressionService _gameProgression;
 
@@ -32,6 +39,17 @@ public class MainMenuView : MonoBehaviour
         energyText.text = _gameProgression.Energy + " / " + (int)GameplayConstants.maxEnergy;
         gemsText.text = _gameProgression.Gems.ToString();
         goldText.text = _gameProgression.Gold.ToString();
+
+        CheckIfMaxLevel();
+    }
+
+    private void CheckIfMaxLevel()
+    {
+        if (_gameProgression.CurrentLevel >= levelList.levelList.Count)
+        {
+            levelText.text = "You beat all the levels";
+            startButton.interactable = false;
+        }
     }
 
     public void ChangeScene(int sceneId)
