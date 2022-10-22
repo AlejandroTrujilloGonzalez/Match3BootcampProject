@@ -81,7 +81,7 @@ public class ShopView : MonoBehaviour
 
     public void PurchaseEnergy()
     {
-        if (_gameProgression.Gold >= 100)
+        if (_gameProgression.Gold >= 100 && _gameProgression.Energy < (int) GameplayConstants.maxEnergy)
         {
             _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
             _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);

@@ -10,9 +10,6 @@ public class BoardView : MonoBehaviour
 {
     //Board
     [SerializeField]
-    private Vector2Int boardSize = new Vector2Int(7, 6);
-
-    [SerializeField]
     private Camera inputCamera;    
 
     private Plane inputPlane;
@@ -102,7 +99,7 @@ public class BoardView : MonoBehaviour
         if (IsAnimating)
             return;
 
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUIObject())
         {
             var ray = inputCamera.ScreenPointToRay(Input.mousePosition);
             if (inputPlane.Raycast(ray, out float hitDistance))
@@ -208,8 +205,17 @@ public class BoardView : MonoBehaviour
         _analytics.SendEvent("LevelLose");
     }
 
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
+
     ////////////////////////////////////////////////////////Buttons
-    
+
     public void ContinueRetry()
     {
         SceneLoader.Instance.LoadScene((int)GameplayConstants.gameplaySceneId);
