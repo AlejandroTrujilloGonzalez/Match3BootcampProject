@@ -31,6 +31,7 @@ public class MainMenuView : MonoBehaviour
     void Start()
     {
         UpdateMainMenuText();
+        AudioPlayer.Instance.PlayMusic("Menu1");
     }
 
     private void UpdateMainMenuText()

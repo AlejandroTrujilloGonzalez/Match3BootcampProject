@@ -14,16 +14,16 @@ public class TestingScript : MonoBehaviour
 
     public void SetLevel()
     {
-        _gameProgression.ResetLevel();
+        _gameProgression.SetLevel(0);
     }
 
     public void SetEnergy()
     {
-        _gameProgression.UpdateEnergy(5);
+        _gameProgression.SetEnergy(0);
     }
 
     public void SetGold()
     {
-        _gameProgression.UpdateGold(500);
+        _gameProgression.SetGold(500);
     }
 }

@@ -165,6 +165,8 @@ public class BoardController
         
         if (matchedTiles.Count >= (int)GameplayConstants.nMinimunMatch)
         {
+            AudioPlayer.Instance.PlaySFX("Simple_Match");
+
             isMatch = true;
             foreach (TileModel tile in matchedTiles)
             {
@@ -174,11 +176,13 @@ public class BoardController
 
             if (matchedTiles.Count > (int)GameplayConstants.nBombMatch)
             {
+                AudioPlayer.Instance.PlaySFX("Bomb_Match");
                 model[touchedTile.position].item = new TileItem { tileElement = (int)GameplayConstants.bomb };
                 OnTileCreated(model[touchedTile.position]);
             }
             else if (matchedTiles.Count > (int)GameplayConstants.nArrowMatch)
             {
+                AudioPlayer.Instance.PlaySFX("Arrow_Match");
                 model[touchedTile.position].item = new TileItem
                 {
                     tileElement = UnityEngine.Random.Range(0, 100) < 50 ? (int)GameplayConstants.horizontalArrow : (int)GameplayConstants.verticalArrow
@@ -215,6 +219,7 @@ public class BoardController
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int> { (int)GameplayConstants.horizontalArrow, (int)GameplayConstants.verticalArrow });
 
         isMatch = true;
+        AudioPlayer.Instance.PlaySFX("Arrow_Match");
         if (touchedTile.item.tileElement == (int)GameplayConstants.horizontalArrow)
         {            
             FireHorizontalArrow(touchedTile);
@@ -253,6 +258,8 @@ public class BoardController
     {
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int>());
         int bombRange = matchedTiles.Count > 1 ? 2 : 1;
+
+        AudioPlayer.Instance.PlaySFX("Bomb_Match");
         isMatch = true;
         for (int y = -bombRange; y <= bombRange; ++y)
         {

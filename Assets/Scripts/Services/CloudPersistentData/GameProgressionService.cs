@@ -36,6 +36,7 @@ public class GameProgressionService : IService
             Gems = config.InitialGems;
             Energy = config.InitialEnergy;
             _gold = config.InitialGold;
+            CurrentLevel = config.InitialLevel;
             Save();
         }
         else
@@ -81,9 +82,21 @@ public class GameProgressionService : IService
         Save();
     }
 
-    public void ResetLevel()
+    public void SetLevel(int level)
     {
-        CurrentLevel = 0;
+        CurrentLevel = level;
+        Save();
+    }
+
+    public void SetEnergy(int energy)
+    {
+        Energy = energy;
+        Save();
+    }
+
+    public void SetGold(int gold)
+    {
+        _gold = gold;
         Save();
     }
 

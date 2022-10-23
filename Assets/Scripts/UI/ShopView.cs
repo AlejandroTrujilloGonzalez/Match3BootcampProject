@@ -83,6 +83,7 @@ public class ShopView : MonoBehaviour
     {
         if (_gameProgression.Gold >= 100 && _gameProgression.Energy < (int) GameplayConstants.maxEnergy)
         {
+            AudioPlayer.Instance.PlaySFX("Buy_Button");
             _gameProgression.UpdateEnergy(_gameConfig.EnergyPerBuy);
             _gameProgression.UpdateGold(-_gameConfig.EnergyGoldCost);
             UpdateStatusBar();

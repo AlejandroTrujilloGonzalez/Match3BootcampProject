@@ -15,19 +15,19 @@ public class TestingEditor : Editor
         if (Application.isPlaying)
         {
             TestingScript myScript = (TestingScript)target;
-            if (GUILayout.Button("Reset Level"))
+            if (GUILayout.Button("Set Level"))
             {
                 myScript.SetLevel();
                 Debug.Log("Level reset");
             }
 
-            if (GUILayout.Button("Reset energy"))
+            if (GUILayout.Button("Set energy"))
             {
                 myScript.SetEnergy();
                 Debug.Log("Energy reset");
             }
 
-            if (GUILayout.Button("Reset gold"))
+            if (GUILayout.Button("Set gold"))
             {
                 myScript.SetGold();
                 Debug.Log("Gold reset");

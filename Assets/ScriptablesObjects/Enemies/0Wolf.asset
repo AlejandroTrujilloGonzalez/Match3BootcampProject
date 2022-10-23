@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 974f657425e9ddf4a8461bf576e6dc7d, type: 3}
-  m_Name: RedWolf
+  m_Name: 0Wolf
   m_EditorClassIdentifier: 
-  enemyName: RedWolf
-  life: 750
-  type: fire
-  sprite: {fileID: 21300000, guid: 213f2341ffb513d469d5ce380d2fdd61, type: 3}
+  enemyName: Wolf
+  life: 200
+  type: normal
+  sprite: {fileID: 21300000, guid: 03d60d02db2f54c029a14fa2d2ce097b, type: 3}

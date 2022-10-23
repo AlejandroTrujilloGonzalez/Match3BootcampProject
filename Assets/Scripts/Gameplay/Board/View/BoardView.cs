@@ -91,6 +91,7 @@ public class BoardView : MonoBehaviour
 
     private void Start()
     {
+        AudioPlayer.Instance.PlayRandomBattleMusic();
         boardController.ProcessInput(Vector2Int.zero);
     }
 
@@ -190,6 +191,7 @@ public class BoardView : MonoBehaviour
 
     private void OnWin()
     {
+        AudioPlayer.Instance.PlaySFX("Win_Level");
         winPanel.SetActive(true);
         winAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
         _gameProgression.UpdateCurrentLevel(1);
@@ -199,6 +201,7 @@ public class BoardView : MonoBehaviour
 
     private void OnLose()
     {
+        AudioPlayer.Instance.PlaySFX("Lose_Level");
         losePanel.SetActive(true);
         loseAdButton.interactable = ServiceLocator.GetService<AdsGameService>().IsAdReady;
         _gameProgression.UpdateEnergy(-1);

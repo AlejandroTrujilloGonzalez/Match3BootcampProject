@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 974f657425e9ddf4a8461bf576e6dc7d, type: 3}
-  m_Name: Tetrapus
+  m_Script: {fileID: 11500000, guid: 216a4b328119fad4c85f012b271702f0, type: 3}
+  m_Name: Level06
   m_EditorClassIdentifier: 
-  enemyName: Tetrapus
-  life: 1500
-  type: water
-  sprite: {fileID: 21300000, guid: c67cd34ac9fe542468f9f8f4117582b4, type: 3}
+  id: 6
+  moves: 45
+  maxTilesTypes: 4
+  boardWidth: 6
+  boardHeight: 5
+  enemy: {fileID: 11400000, guid: cdc035cec1477f44c98f9402c25a23b1, type: 2}
