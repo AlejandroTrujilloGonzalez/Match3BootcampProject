@@ -21,6 +21,11 @@ public class EnemyController
         return model.Life;
     }
 
+    public void SetLife(int life)
+    {
+        model.Life = life;
+    }
+
     public void TakeDamage(int damage)
     {
         model.Life -= damage;

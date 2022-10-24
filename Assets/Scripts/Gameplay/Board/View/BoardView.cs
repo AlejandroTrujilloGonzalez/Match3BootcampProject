@@ -186,7 +186,12 @@ public class BoardView : MonoBehaviour
     //WIP. do with a life bar
     private void UpdateEnemyLife()
     {
-        enemyLifeText.text = enemyController.GetLife() + "/" + levelValues.enemy.life;
+        if (enemyController.GetLife() <= 0)
+        {
+            enemyController.SetLife(0);
+        }
+
+        enemyLifeText.text = enemyController.GetLife() + "/" + levelValues.enemy.life;        
     }
 
     private void OnWin()
@@ -221,7 +226,14 @@ public class BoardView : MonoBehaviour
 
     public void ContinueRetry()
     {
-        SceneLoader.Instance.LoadScene((int)GameplayConstants.gameplaySceneId);
+        if ((_gameProgression.CurrentLevel >= levelListSO.levelList.Count) || _gameProgression.Energy <= 0)
+        {
+            SceneLoader.Instance.LoadScene((int)GameplayConstants.mainMenuSceneId);
+        } 
+        else
+        {
+            SceneLoader.Instance.LoadScene((int)GameplayConstants.gameplaySceneId);
+        }        
     }
 
     public async void BackToMenuRewarded()

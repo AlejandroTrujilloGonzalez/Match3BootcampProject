@@ -2,7 +2,7 @@ using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
-public class MatchWidth : MonoBehaviour
+public class MatchGameObjectWidth : MonoBehaviour
 {
     [SerializeField]
     float _sceneWidth = 10;

@@ -41,14 +41,20 @@ public class MainMenuView : MonoBehaviour
         gemsText.text = _gameProgression.Gems.ToString();
         goldText.text = _gameProgression.Gold.ToString();
 
-        CheckIfMaxLevel();
+        CheckStartButton();
     }
 
-    private void CheckIfMaxLevel()
+    private void CheckStartButton()
     {
         if (_gameProgression.CurrentLevel >= levelList.levelList.Count)
         {
             levelText.text = "You beat all the levels";
+            startButton.interactable = false;
+        }
+
+        if (_gameProgression.Energy <= 0)
+        {
+            levelText.text = "You need more energy!";
             startButton.interactable = false;
         }
     }

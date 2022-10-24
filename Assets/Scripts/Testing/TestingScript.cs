@@ -14,7 +14,7 @@ public class TestingScript : MonoBehaviour
 
     public void SetLevel()
     {
-        _gameProgression.SetLevel(0);
+        _gameProgression.SetLevel(6);
     }
 
     public void SetEnergy()
