@@ -219,7 +219,7 @@ public class BoardController
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int> { (int)GameplayConstants.horizontalArrow, (int)GameplayConstants.verticalArrow });
 
         isMatch = true;
-        AudioPlayer.Instance.PlaySFX("Arrow_Match");
+        AudioPlayer.Instance.PlaySFX("Arrow_Tile");
         if (touchedTile.item.tileElement == (int)GameplayConstants.horizontalArrow)
         {            
             FireHorizontalArrow(touchedTile);
@@ -259,7 +259,7 @@ public class BoardController
         List<TileModel> matchedTiles = GetMatchedTiles(touchedTile, new List<int>());
         int bombRange = matchedTiles.Count > 1 ? 2 : 1;
 
-        AudioPlayer.Instance.PlaySFX("Bomb_Match");
+        AudioPlayer.Instance.PlaySFX("Bomb_Tile");
         isMatch = true;
         for (int y = -bombRange; y <= bombRange; ++y)
         {
